@@ -1,0 +1,6 @@
+# vm:
+# * The following settings shouldn't exist: bix
+# * A box must be specified.
+Vagrant.configure('2') do |config|
+  config.vm.bix = 'hashicorp/precise64'
+end
