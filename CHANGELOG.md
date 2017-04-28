@@ -1,6 +1,6 @@
 ### Next (Roadmap)
+- Switched to using Linter v2 API.
 - jasmine tests
-- linter 2 api
 - capture block info similar to how in linter-packer-validate (multiple_blocks)
 - capture range and block info (vagrant_block_arg)
 

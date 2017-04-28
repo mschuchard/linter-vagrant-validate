@@ -3,3 +3,4 @@ node_modules
 spec
 linter_vagrant_validate.png
 .git
+spec/fixtures/*/.vagrant

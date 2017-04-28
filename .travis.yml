@@ -1,5 +1,5 @@
 # setup environment
-sudo: false
+sudo: true
 language: ruby
 
 notifications:
@@ -21,6 +21,6 @@ matrix:
     env: ATOM_CHANNEL=beta
 
 # execute tests
-install: dpkg -i https://releases.hashicorp.com/vagrant/1.9.4/vagrant_1.9.4_x86_64.deb
+install: sudo dpkg -i https://releases.hashicorp.com/vagrant/1.9.4/vagrant_1.9.4_x86_64.deb
 before_script: vagrant --version
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
