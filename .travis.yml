@@ -1,4 +1,5 @@
 # setup environment
+dist: trusty
 sudo: true
 language: ruby
 
@@ -21,6 +22,8 @@ matrix:
     env: ATOM_CHANNEL=beta
 
 # execute tests
-install: sudo dpkg -i https://releases.hashicorp.com/vagrant/1.9.4/vagrant_1.9.4_x86_64.deb
+install:
+  - sudo wget https://releases.hashicorp.com/vagrant/1.9.4/vagrant_1.9.4_x86_64.deb
+  - sudo dpkg -i vagrant_1.9.4_x86_64.deb
 before_script: vagrant --version
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
