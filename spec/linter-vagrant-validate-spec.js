@@ -2,22 +2,22 @@
 
 import * as path from 'path';
 
-describe('The Terraform Validate provider for Linter', () => {
+describe('The Vagrant Validate provider for Linter', () => {
   const lint = require(path.join('..', 'lib', 'main.js')).provideLinter().lint;
 
   beforeEach(() => {
     atom.workspace.destroyActivePaneItem();
     waitsForPromise(() => {
-      atom.packages.activatePackage('linter-terraform-syntax');
-      return atom.packages.activatePackage('language-terraform').then(() =>
-        atom.workspace.open(path.join(__dirname, 'fixtures/clean', 'test.tf'))
+      atom.packages.activatePackage('linter-vagrant-validate');
+      return atom.packages.activatePackage('language-ruby').then(() =>
+        atom.workspace.open(path.join(__dirname, 'fixtures/clean', 'Vagrantfile'))
       );
     });
   });
 
   describe('checks a file with a syntax issue', () => {
     let editor = null;
-    const badFile = path.join(__dirname, 'fixtures/syntax', 'test.tf');
+    const badFile = path.join(__dirname, 'fixtures/clean', 'Vagrantfile');
     beforeEach(() => {
       waitsForPromise(() =>
         atom.workspace.open(badFile).then(openEditor => {
@@ -54,7 +54,7 @@ describe('The Terraform Validate provider for Linter', () => {
 
   describe('checks a file with a syntax issue in the directory', () => {
     let editor = null;
-    const badFile = path.join(__dirname, 'fixtures/syntax', 'test_two.tf');
+    const badFile = path.join(__dirname, 'fixtures/clean', 'Vagrantfile');
     beforeEach(() => {
       waitsForPromise(() =>
         atom.workspace.open(badFile).then(openEditor => {
@@ -91,7 +91,7 @@ describe('The Terraform Validate provider for Linter', () => {
 
   describe('checks a file with a validate issue in the directory', () => {
     let editor = null;
-    const badFile = path.join(__dirname, 'fixtures/unknown_resource', 'test.tf');
+    const badFile = path.join(__dirname, 'fixtures/clean', 'Vagrantfile');
     beforeEach(() => {
       waitsForPromise(() =>
         atom.workspace.open(badFile).then(openEditor => {
@@ -122,7 +122,7 @@ describe('The Terraform Validate provider for Linter', () => {
 
   it('finds nothing wrong with a valid file', () => {
     waitsForPromise(() => {
-      const goodFile = path.join(__dirname, 'fixtures/clean', 'test.tf');
+      const goodFile = path.join(__dirname, 'fixtures/clean', 'Vagrantfile');
       return atom.workspace.open(goodFile).then(editor =>
         lint(editor).then(messages => {
           expect(messages.length).toEqual(0);
