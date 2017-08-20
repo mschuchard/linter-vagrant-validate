@@ -15,9 +15,9 @@ describe('The Vagrant Validate provider for Linter', () => {
     });
   });
 
-  describe('checks a file with a syntax issue', () => {
+  describe('checks a file with a block arg syntax issue', () => {
     let editor = null;
-    const badFile = path.join(__dirname, 'fixtures/clean', 'Vagrantfile');
+    const badFile = path.join(__dirname, 'fixtures/block_arg', 'Vagrantfile');
     beforeEach(() => {
       waitsForPromise(() =>
         atom.workspace.open(badFile).then(openEditor => {
@@ -37,84 +37,14 @@ describe('The Vagrant Validate provider for Linter', () => {
     it('verifies the first message', () => {
       waitsForPromise(() => {
         return lint(editor).then(messages => {
-          expect(messages[0].type).toBeDefined();
-          expect(messages[0].type).toEqual('Error');
-          expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual("expected: IDENT | STRING | ASSIGN | LBRACE got: SUB");
-          expect(messages[0].filePath).toBeDefined();
-          expect(messages[0].filePath).toMatch(/.+test\.tf$/);
-          expect(messages[0].range).toBeDefined();
-          expect(messages[0].range.length).toBeDefined();
-          expect(messages[0].range.length).toEqual(2);
-          expect(messages[0].range).toEqual([[3, 3], [3, 4]]);
-        });
-      });
-    });
-  });
-
-  describe('checks a file with a syntax issue in the directory', () => {
-    let editor = null;
-    const badFile = path.join(__dirname, 'fixtures/clean', 'Vagrantfile');
-    beforeEach(() => {
-      waitsForPromise(() =>
-        atom.workspace.open(badFile).then(openEditor => {
-          editor = openEditor;
-        })
-      );
-    });
-
-    it('finds the first message', () => {
-      waitsForPromise(() =>
-        lint(editor).then(messages => {
-          expect(messages.length).toEqual(1);
-        })
-      );
-    });
-
-    it('verifies the first message', () => {
-      waitsForPromise(() => {
-        return lint(editor).then(messages => {
-          expect(messages[0].type).toBeDefined();
-          expect(messages[0].type).toEqual('Error');
-          expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual("expected: IDENT | STRING | ASSIGN | LBRACE got: SUB");
-          expect(messages[0].filePath).toBeDefined();
-          expect(messages[0].filePath).toMatch(/.+test\.tf$/);
-          expect(messages[0].range).toBeDefined();
-          expect(messages[0].range.length).toBeDefined();
-          expect(messages[0].range.length).toEqual(2);
-          expect(messages[0].range).toEqual([[3, 3], [3, 4]]);
-        });
-      });
-    });
-  });
-
-  describe('checks a file with a validate issue in the directory', () => {
-    let editor = null;
-    const badFile = path.join(__dirname, 'fixtures/clean', 'Vagrantfile');
-    beforeEach(() => {
-      waitsForPromise(() =>
-        atom.workspace.open(badFile).then(openEditor => {
-          editor = openEditor;
-        })
-      );
-    });
-
-    it('finds the first message', () => {
-      waitsForPromise(() =>
-        lint(editor).then(messages => {
-          expect(messages.length).toEqual(1);
-        })
-      );
-    });
-
-    it('verifies the first message', () => {
-      waitsForPromise(() => {
-        return lint(editor).then(messages => {
-          expect(messages[0].type).toBeDefined();
-          expect(messages[0].type).toEqual('Error');
-          expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual("Non-syntax error in directory: resource 'digitalocean_domain.domain' config: unknown resource 'digitalocean_droplet.droplet' referenced in variable digitalocean_droplet.droplet.ipv4_address.");
+          expect(messages[0].severity).toBeDefined();
+          expect(messages[0].severity).toEqual('error');
+          expect(messages[0].excerpt).toBeDefined();
+          expect(messages[0].excerpt).toEqual("in `block in <top (required)>': undefined local variable or method `cnfig' for main:Object (NameError)");
+          expect(messages[0].location.file).toBeDefined();
+          expect(messages[0].location.file).toMatch(/.+block_arg\/Vagrantfile$/);
+          expect(messages[0].location.position).toBeDefined();
+          expect(messages[0].location.position).toEqual([[2, 0], [2, 1]]);
         });
       });
     });
