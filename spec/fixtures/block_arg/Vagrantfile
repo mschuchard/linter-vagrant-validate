@@ -1,4 +1,4 @@
-# 2:in `block in <top (required)>': undefined local variable or method `cnfig' for main:Object (NameError)
+# 3:in `block in <top (required)>': undefined local variable or method `cnfig' for main:Object (NameError)
 Vagrant.configure('2') do |config|
   cnfig.vm.box = 'hashicorp/precise64'
 end

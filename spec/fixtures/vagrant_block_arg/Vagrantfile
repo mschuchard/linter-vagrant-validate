@@ -3,7 +3,7 @@
 # a syntax error.
 
 # Path: <provider config: virtualbox>
-# Line number: 5
+# Line number: 12
 # Message: NameError: undefined local variable or method `vb' for main:Object
 Vagrant.configure('2') do |config|
   config.vm.box = 'hashicorp/precise64'
