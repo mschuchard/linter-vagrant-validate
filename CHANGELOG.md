@@ -1,6 +1,7 @@
 ### Next (Roadmap)
 - Updated `atom-linter` dependency.
 - Catch linting on nonexistent files.
+- Check for unsupported Vagrant version.
 
 ### 1.1.0
 - Switched to using Linter v2 API.
