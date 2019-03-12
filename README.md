@@ -9,4 +9,4 @@
 The `vagrant` package >= 1.9.4 is required to be installed before using this, since the new `validate` command feature was added for that version by hasyimibhar. The `Linter` and `Language-Ruby` Atom packages are also required.
 
 ### Usage
-- All files named `Vagrantfile` will be linted with this linter. Some output may be redundant with Ruby linters such as the syntax checker, Rubocop, and Reek.
+- All files with `Vagrantfile` in their name will be linted with this linter. Some output may be redundant with Ruby linters such as the syntax checker, Rubocop, and Reek.
