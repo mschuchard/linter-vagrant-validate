@@ -1,4 +1,4 @@
-### Next (Roadmap)
+### 1.1.1
 - Updated `atom-linter` dependency.
 - Catch linting on nonexistent files.
 - Check for unsupported Vagrant version.
