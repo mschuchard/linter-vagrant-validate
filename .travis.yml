@@ -1,6 +1,5 @@
 # setup environment
 dist: xenial
-sudo: true
 language: ruby
 
 notifications:
@@ -23,7 +22,7 @@ matrix:
 
 # execute tests
 install:
-  - sudo wget https://releases.hashicorp.com/vagrant/2.1.5/vagrant_2.1.5_x86_64.deb
-  - sudo dpkg -i vagrant_2.1.5_x86_64.deb
+  - sudo wget https://releases.hashicorp.com/vagrant/2.2.6/vagrant_2.2.6_x86_64.deb
+  - sudo dpkg -i vagrant_2.2.6_x86_64.deb
 before_script: vagrant --version
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
