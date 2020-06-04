@@ -1,3 +1,6 @@
+### 1.1.2
+- Ignore side-errors from Vagrant validate subcommand check.
+
 ### 1.1.1
 - Updated `atom-linter` dependency.
 - Catch linting on nonexistent files.
