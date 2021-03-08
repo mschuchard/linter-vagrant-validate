@@ -1,5 +1,5 @@
-### 1.1.2
-- Ignore side-errors from Vagrant validate subcommand check.
+### 1.1.2 (Next)
+- Make Vagrant validate subcommand check Atom developer tool friendly.
 
 ### 1.1.1
 - Updated `atom-linter` dependency.
