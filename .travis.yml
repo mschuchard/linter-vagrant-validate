@@ -26,7 +26,7 @@ matrix:
 
 # execute tests
 install:
-  - sudo wget https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb
-  - sudo dpkg -i vagrant_2.2.7_x86_64.deb
+  - sudo wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
+  - sudo dpkg -i vagrant_2.2.14_x86_64.deb
 before_script: vagrant --version
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
