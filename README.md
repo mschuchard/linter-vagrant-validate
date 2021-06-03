@@ -1,7 +1,7 @@
 ![Preview](https://raw.githubusercontent.com/mschuchard/linter-vagrant-validate/master/linter_vagrant_validate.png)
 
 ### Linter-Vagrant-Validate
-[![Build Status](https://travis-ci.org/mschuchard/linter-vagrant-validate.svg?branch=master)](https://travis-ci.org/mschuchard/linter-vagrant-validate)
+[![Build Status](https://travis-ci.com/mschuchard/linter-vagrant-validate.svg?branch=master)](https://travis-ci.com/mschuchard/linter-vagrant-validate)
 
 `Linter-Vagrant-Validate` aims to provide functional and robust `vagrant validate` linting functionality within Atom.
 
