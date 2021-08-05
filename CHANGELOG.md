@@ -1,3 +1,6 @@
+### (Next)
+- Updates to Linter API usage.
+
 ### 1.1.2 (Next)
 - Make Vagrant validate subcommand check Atom developer tool friendly.
 
