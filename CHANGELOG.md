@@ -1,4 +1,4 @@
-### 1.1.2 (Next)
+### 1.1.2
 - Make Vagrant validate subcommand check Atom developer tool friendly.
 - Updates to Linter API usage.
 - Cleanup `validate` output for parsing.
