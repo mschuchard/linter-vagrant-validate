@@ -1,3 +1,6 @@
+### (Next)
+- Fix linter error notification return.
+
 ### 1.1.2
 - Make Vagrant validate subcommand check Atom developer tool friendly.
 - Updates to Linter API usage.
