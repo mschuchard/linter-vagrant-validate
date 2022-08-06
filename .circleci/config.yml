@@ -6,11 +6,10 @@ jobs:
     environment:
       VERSION: '2.2.19'
       DISPLAY: ':99'
-      ATOM_LINT_WITH_BUNDLED_NODE: true
       APM_TEST_PACKAGES: 'language-ruby'
     working_directory: /tmp/project
     docker:
-    - image: cimg/node:latest
+    - image: circleci/node:latest
     steps:
     - checkout
     - restore_cache:

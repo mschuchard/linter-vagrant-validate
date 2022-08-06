@@ -4,3 +4,5 @@ spec
 linter_vagrant_validate.png
 .git
 .travis.yml
+.circleci
+.github

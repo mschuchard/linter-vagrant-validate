@@ -10,6 +10,7 @@ on:
 env:
   CI: true
   PACKAGES: 'language-ruby'
+  VERSION: '2.1.19'
 
 jobs:
   lint-and-test:
@@ -32,9 +33,7 @@ jobs:
       run: apm install && apm install ${PACKAGES} && apm clean
     - name: lint source and spec
       run: ./node_modules/.bin/eslint lib spec || true
-    - name: install some pre-requisite packages
-      run: sudo apt-get update && sudo apt-get -yq install curl xvfb libgbm-dev
     - name: install vagrant
-      run: curl -o curl -o vagrant.deb https://releases.hashicorp.com/vagrant/${VERSION}/vagrant_${VERSION}_x86_64.deb && sudo dpkg -i vagrant.deb
+      run: curl -o vagrant.deb https://releases.hashicorp.com/vagrant/${VERSION}/vagrant_${VERSION}_x86_64.deb && sudo dpkg -i vagrant.deb
     - name: run tests
       run: atom --test spec
