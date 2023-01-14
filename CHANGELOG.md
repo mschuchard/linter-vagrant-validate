@@ -1,5 +1,6 @@
 ### (Next)
 - Fix linter error notification return.
+- add fixture for go vagrantfile
 
 ### 1.1.2
 - Make Vagrant validate subcommand check Atom developer tool friendly.
