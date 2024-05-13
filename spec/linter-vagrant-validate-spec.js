@@ -182,7 +182,7 @@ describe('The Vagrant Validate provider for Linter', () => {
   it('ignores a non-Vagrant ruby file', (done) => {
     const goodFile = path.join(__dirname, 'fixtures', 'not_vagrant.rb');
     return atom.workspace.open(goodFile).then(editor =>
-      lint(editor).then(=> {
+      lint(editor).then(messages => {
       }, () => {
         done();
       })
