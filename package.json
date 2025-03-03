@@ -10,11 +10,14 @@
     "linter",
     "vagrant"
   ],
+  "scripts": {
+    "test": "pulsar --test spec"
+  },
   "bugs": {
     "url": "https://github.com/mschuchard/linter-vagrant-validate/issues"
   },
   "engines": {
-    "atom": ">0.95.0"
+    "pulsar": ">=1.0.0"
   },
   "providedServices": {
     "linter": {
@@ -28,7 +31,7 @@
     "atom-linter": "^10.0.0"
   },
   "devDependencies": {
-    "eslint": "latest",
+    "eslint": "^8.0",
     "eslint-config-airbnb-base": "latest",
     "eslint-plugin-import": "latest"
   },
@@ -39,7 +42,7 @@
         "error",
         {
           "ignore": [
-            "atom"
+            "pulsar"
           ]
         }
       ]
@@ -49,7 +52,7 @@
       "node": true
     },
     "globals": {
-      "atom": false
+      "atom": true
     }
   }
 }
